@@ -14,18 +14,53 @@ function createCourse(): { name: string; price: number } {
 }
 
 // type aliases
+// type User = {
+//   name: string;
+//   email: string;
+//   isActive: boolean;
+// };
+
+// type MyString = string;
+
+// function create(user: User): User {
+//   return { name: "", email: "", isActive: true };
+// }
+
+// create({ name: "", email: "", isActive: true });
+
+
+
+// Readonly and optional
+type cardNumber = {
+  cardnumber: string;
+};
+
+type cardDate = {
+  cardDate: string;
+};
+
+type cardDetails = cardNumber &
+  cardDate & {
+    cvv: number;
+  };
+
 type User = {
+  readonly _id: string;
   name: string;
   email: string;
   isActive: boolean;
+  creditCardDetails?: cardDetails;
 };
 
-type MyString = string;
+let myUser: User = {
+  _id: "1234",
+  name: "Mohit",
+  email: "mohit@gmail.com",
+  isActive: false,
+};
 
-function create(user: User): User {
-  return { name: "", email: "", isActive: true };
-}
+myUser.email = "m@gmail.com";
 
-create({ name: "", email: "", isActive: true });
+// myUser._id="122" -> this will throw an error because _id is read-only
 
 export {};

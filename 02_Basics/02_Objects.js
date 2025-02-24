@@ -13,7 +13,10 @@ createUser(newUser);
 function createCourse() {
     return { name: "reactJs", price: 399 };
 }
-function create(user) {
-    return { name: "", email: "", isActive: true };
-}
-create({ name: "", email: "", isActive: true });
+var myUser = {
+    _id: "1234",
+    name: "Mohit",
+    email: "mohit@gmail.com",
+    isActive: false,
+};
+myUser.email = "m@gmail.com";
